@@ -49,6 +49,20 @@ class User extends Authenticatable
             ->exists();
     }
 
+    public function assignRole(string $role): void
+    {
+        $role = Role::where('slug', $role)->firstOrFail();
+
+        $this->roles()->syncWithoutDetaching($role->id);
+    }
+
+    public function removeRole(string $role): void
+    {
+        $role = Role::where('slug', $role)->firstOrFail();
+
+        $this->roles()->detach($role->id);
+    }
+
     protected function casts(): array
     {
         return [
