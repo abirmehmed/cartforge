@@ -7,7 +7,7 @@ const appName = import.meta.env.VITE_APP_NAME || 'CartForge';
 
 const pages = import.meta.glob('./Pages/**/*.jsx');
 
-createInertiaApp({
+void createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
 
     resolve: async (name) => {

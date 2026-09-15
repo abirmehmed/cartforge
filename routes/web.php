@@ -25,3 +25,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/admin', function () {
+    return Inertia::render('Admin/Dashboard');
+})->name('admin.dashboard');
+
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/products', [
+        \App\Http\Controllers\Admin\ProductController::class,
+        'index',
+    ])->name('products.index');
+});
