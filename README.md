@@ -57,7 +57,10 @@ Order
    └──────────► Automation
                     │
                     ▼
-               Analytics[200~The objective is to make these systems work together instead of treating them as isolated features.
+               Analytics
+```
+
+The objective is to make these systems work together instead of treating them as isolated features.
 
 ## ✨ Features
 
@@ -176,7 +179,6 @@ CartForge is being developed around several interconnected systems.
 - Automation
 - Analytics and reporting
 
-The objective is to make these systems work together instead of treating them as isolated features.
 
 ## 🧱 Architecture
 
@@ -214,7 +216,9 @@ The system separates responsibilities between the presentation layer, applicatio
           │  Database  │ │   Queue    │ │  External  │
           │   / ORM    │ │   / Jobs   │ │   APIs     │
           └────────────┘ └────────────┘ └────────────┘
-Architectural Principles
+```
+
+### Architectural Principles
 Separation of concerns
 SOLID principles
 Reusable business logic
@@ -233,50 +237,51 @@ Testable business logic
 API-ready architecture
 
 CartForge is being designed so that the same business operations can eventually serve the web application, APIs, mobile applications, background jobs, and integrations without duplicating core business logic.
+## 🛠 Tech Stack
 
-🛠 Tech Stack
-Backend
-PHP 8.4+
-Laravel 13
-Laravel Eloquent ORM
-Laravel Queues
-Laravel Scheduler
-Laravel Events / Listeners
-Laravel Policies
-Laravel Form Requests
-Laravel API Resources
-Frontend
-React
-Inertia.js
-TypeScript / JavaScript
-Vite
-Tailwind CSS
-Database
-MariaDB
-MySQL-compatible database architecture
-Relational data modeling
-Foreign keys
-Database indexes
-Transactions
-Development & Tooling
-Composer
-npm
-Git
-GitHub
-Linux
-Vite development server
-Planned Infrastructure
-Redis
-Queue workers
-Scheduled background jobs
-Nginx
-PHP-FPM
-Production monitoring
-Logging and error tracking
-🧩 System Modules
+### Backend
+
+- PHP 8.4+
+- Laravel 13
+- Laravel Eloquent ORM
+
+### Frontend
+
+- React
+- Inertia.js
+- Vite
+- Tailwind CSS
+
+### Database
+
+- MariaDB
+- Laravel migrations
+- Eloquent ORM
+
+### Development & Tooling
+
+- Composer
+- npm
+- Git
+- GitHub
+- Linux
+- Vite development server
+
+### Planned Infrastructure
+
+- Redis
+- Queue workers
+- Scheduled background jobs
+- Nginx
+- PHP-FPM
+- Production monitoring
+- Logging and error tracking
+
+## 🧩 System Modules
 
 The application is organized around major business domains rather than individual pages.
 
+```text
 CartForge
 │
 ├── Identity & Access
@@ -328,7 +333,7 @@ CartForge
     ├── Inventory
     ├── Customers
     └── Courier Performance
-
+```
 
 ## 🧠 Development Philosophy
 
@@ -429,7 +434,7 @@ Create Order
                        │
                        ▼
                    Analytics
-````
+```
 
 Each stage can trigger additional workflows without tightly coupling every subsystem to every other subsystem.
 
