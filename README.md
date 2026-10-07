@@ -567,3 +567,128 @@ Push
 The objective is to keep the repository in a working state throughout development.
 
 
+
+## ⚙️ Installation & Setup
+
+### Requirements
+
+Before installing CartForge, make sure the following are available:
+
+- PHP 8.4+
+- Composer 2+
+- Node.js 22+
+- npm 10+
+- MariaDB 10.11+
+- Git
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/abirmehmed/cartforge.git
+cd cartforge
+```
+
+### Install PHP Dependencies
+
+```bash
+composer install
+```
+
+### Install Frontend Dependencies
+
+```bash
+npm install
+```
+
+### Configure Environment
+
+Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+Generate the application key:
+
+```bash
+php artisan key:generate
+```
+
+Configure the database connection in `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=cartforge
+DB_USERNAME=cartforge
+DB_PASSWORD=your_database_password
+```
+
+Set the application timezone:
+
+```env
+APP_TIMEZONE=Asia/Dhaka
+```
+
+### Run Database Migrations
+
+```bash
+php artisan migrate
+```
+
+### Seed Development Data
+
+```bash
+php artisan db:seed
+```
+
+### Build Frontend Assets
+
+```bash
+npm run build
+```
+
+### Start Development Server
+
+```bash
+composer run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:8000
+```
+
+The Vite development server runs separately during development.
+
+### Verify the Installation
+
+Check the Laravel environment:
+
+```bash
+php artisan about
+```
+
+Check migration status:
+
+```bash
+php artisan migrate:status
+```
+
+Run the test suite:
+
+```bash
+php artisan test
+```
+
+Run frontend checks:
+
+```bash
+npm run check
+npm run types:check
+```
+
+A successful installation should have migrations completed, tests passing, and frontend checks completing without errors.
+
